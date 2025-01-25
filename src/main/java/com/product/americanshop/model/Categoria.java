@@ -13,7 +13,7 @@ public class Categoria {
     @Column(name = "porcentaje_fob", nullable = false)
     private Double porcentajeFob;
     @Column(name = "nombre", nullable = false)
-    private Double nombre;
+    private String nombre;
 
     // Getters and setters
     public Integer getId() {
@@ -32,11 +32,11 @@ public class Categoria {
         this.porcentajeFob = porcentajeFob;
     }
 
-    public Double getNombre() {
+    public String getNombre() {
         return nombre;
     }
 
-    public void setNombre(Double nombre) {
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
     public Integer getEstado() {
