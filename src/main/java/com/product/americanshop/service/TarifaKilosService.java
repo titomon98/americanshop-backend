@@ -14,7 +14,9 @@ public class TarifaKilosService {
     private TarifaKilosRepository tarifaKilosRepository;
 
     public List<TarifaKilos> findAll() {
-        return tarifaKilosRepository.findAll();
+        return tarifaKilosRepository.findAll().stream()
+        .filter(categoria -> categoria.getEstado() == 1)
+        .toList();
     }
 
     public Optional<TarifaKilos> findById(Long id) {

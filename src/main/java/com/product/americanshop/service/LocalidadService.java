@@ -14,7 +14,9 @@ public class LocalidadService {
     private LocalidadRepository localidadRepository;
 
     public List<Localidad> findAll() {
-        return localidadRepository.findAll();
+        return localidadRepository.findAll().stream()
+        .filter(categoria -> categoria.getEstado() == 1)
+        .toList();
     }
 
     public Optional<Localidad> findById(Long id) {

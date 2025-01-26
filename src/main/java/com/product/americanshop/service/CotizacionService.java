@@ -13,7 +13,9 @@ public class CotizacionService {
     private CotizacionRepository cotizacionRepository;
 
     public List<Cotizacion> findAll() {
-        return cotizacionRepository.findAll();
+        return cotizacionRepository.findAll().stream()
+        .filter(categoria -> categoria.getEstado() == 1)
+        .toList();
     }
 
     public Optional<Cotizacion> findById(Long id) {

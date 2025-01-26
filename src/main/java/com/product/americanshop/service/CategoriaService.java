@@ -14,7 +14,9 @@ public class CategoriaService {
     private CategoriaRepository categoriaRepository;
 
     public List<Categoria> findAll() {
-        return categoriaRepository.findAll();
+        return categoriaRepository.findAll().stream()
+        .filter(categoria -> categoria.getEstado() == 1)
+        .toList();
     }
 
     public Optional<Categoria> findById(Long id) {

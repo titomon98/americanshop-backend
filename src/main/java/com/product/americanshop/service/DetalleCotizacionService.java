@@ -13,7 +13,9 @@ public class DetalleCotizacionService {
     private DetalleCotizacionRepository detalleCotizacionRepository;
 
     public List<DetalleCotizacion> findAll() {
-        return detalleCotizacionRepository.findAll();
+        return detalleCotizacionRepository.findAll().stream()
+        .filter(categoria -> categoria.getEstado() == 1)
+        .toList();
     }
 
     public Optional<DetalleCotizacion> findById(Long id) {

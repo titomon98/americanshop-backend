@@ -14,7 +14,9 @@ public class PromocionService {
     private PromocionRepository promocionRepository;
 
     public List<Promocion> findAll() {
-        return promocionRepository.findAll();
+        return promocionRepository.findAll().stream()
+        .filter(categoria -> categoria.getEstado() == 1)
+        .toList();
     }
 
     public Optional<Promocion> findById(Long id) {
