@@ -2,6 +2,7 @@ package com.product.americanshop.model;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -21,7 +22,7 @@ public class Promocion {
     @Column(name = "fecha_inicio", nullable = true)
     private Date fechaInicio;
     @Column(name="fecha_fin", nullable = false)
-    private Date fechaFin;
+    private LocalDate fechaFin;
     @Column(name = "estado", nullable = false)
     private Integer estado;
 
@@ -66,11 +67,11 @@ public class Promocion {
         this.fechaInicio = fechaInicio;
     }
 
-    public Date getFechaFin() {
+    public LocalDate getFechaFin() {
         return fechaFin;
     }
 
-    public void setFechaFin(Date fechaFin) {
+    public void setFechaFin(LocalDate fechaFin) {
         this.fechaFin = fechaFin;
     }
 

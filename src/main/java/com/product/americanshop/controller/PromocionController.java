@@ -47,4 +47,14 @@ public class PromocionController {
             return ResponseEntity.notFound().build();
         }
     }
+
+    @PostMapping("/validar")
+    public ResponseEntity<?> validarCodigo(@RequestBody Promocion promocionRequest) {
+        try {
+            Promocion promocion = promocionService.validarPromocion(promocionRequest.getCodigo());
+            return ResponseEntity.ok(promocion);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
 }

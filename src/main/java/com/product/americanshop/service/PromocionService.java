@@ -5,6 +5,7 @@ import com.product.americanshop.repository.PromocionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -45,5 +46,16 @@ public class PromocionService {
             return true;
         }
         return false;
+    }
+
+    public Promocion validarPromocion(String codigo) throws Exception {
+        Promocion promocion = promocionRepository.findByCodigo(codigo);
+        if (promocion == null) {
+            throw new Exception("Código no encontrado");
+        }
+        if (LocalDate.now().isAfter(promocion.getFechaFin())) {
+            throw new Exception("El código ha expirado");
+        }
+        return promocion;
     }
 }
