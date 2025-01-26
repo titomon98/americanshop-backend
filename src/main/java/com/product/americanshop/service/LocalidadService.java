@@ -28,7 +28,7 @@ public class LocalidadService {
     public Optional<Localidad> update(Long id, Localidad localidad) {
         return localidadRepository.findById(id).map(existing -> {
             existing.setNombre(localidad.getNombre());
-            existing.setIncluida(localidad.getIncluida());
+            existing.setTarifa(localidad.getTarifa());
             existing.setEstado(localidad.getEstado());
             return localidadRepository.save(existing);
         });

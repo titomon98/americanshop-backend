@@ -2,8 +2,6 @@ package com.product.americanshop.model;
 
 import jakarta.persistence.*;
 
-import java.util.List;
-
 @Entity
 @Table(name = "localidades")
 public class Localidad {
@@ -14,9 +12,9 @@ public class Localidad {
 
     @Column(name = "nombre", nullable = false)
     private String nombre;
-    //El valor de incluida debe ser 1 si se incluye o 0 si no se incluye.
-    @Column(name = "incluida", nullable = false)
-    private Integer incluida;
+    //El valor de tarifa debe ser 1 para AMBA, 2 para BSAS, 3 para Resto del pais y 0 si no está incluída.
+    @Column(name = "tarifa", nullable = false)
+    private Integer tarifa;
     @Column(name = "estado", nullable = false)
     private Integer estado;
 
@@ -37,12 +35,12 @@ public class Localidad {
         this.nombre = nombre;
     }
 
-    public Integer getIncluida() {
-        return incluida;
+    public Integer getTarifa() {
+        return tarifa;
     }
 
-    public void setIncluida(Integer incluida) {
-        this.incluida = incluida;
+    public void setTarifa(Integer tarifa) {
+        this.tarifa = tarifa;
     }
 
     public Integer getEstado() {

@@ -2,8 +2,6 @@ package com.product.americanshop.model;
 
 import jakarta.persistence.*;
 
-import java.util.List;
-
 @Entity
 @Table(name = "tarifa_kilos")
 public class TarifaKilos {
@@ -13,13 +11,13 @@ public class TarifaKilos {
     private Integer id;
 
     @Column(name = "peso", nullable = false)
-    private String peso;
+    private Double peso;
     @Column(name = "tarifa_amba", nullable = false)
-    private String tarifaAmba;
+    private Double tarifaAmba;
     @Column(name = "tarifa_bsas", nullable = false)
-    private String tarifaBsas;
+    private Double tarifaBsas;
     @Column(name = "tarifa_resto", nullable = false)
-    private String tarifaResto;
+    private Double tarifaResto;
     @Column(name = "estado", nullable = false)
     private Integer estado;
 
@@ -32,35 +30,35 @@ public class TarifaKilos {
         this.id = id;
     }
 
-    public String getPeso() {
+    public Double getPeso() {
         return peso;
     }
 
-    public void setPeso(String peso) {
+    public void setPeso(Double peso) {
         this.peso = peso;
     }
 
-    public String getTarifaAmba() {
+    public Double getTarifaAmba() {
         return tarifaAmba;
     }
 
-    public void setTarifaAmba(String tarifaAmba) {
+    public void setTarifaAmba(Double tarifaAmba) {
         this.tarifaAmba = tarifaAmba;
     }
 
-    public String getTarifaBsas() {
+    public Double getTarifaBsas() {
         return tarifaBsas;
     }
 
-    public void setTarifaBsas(String tarifaBsas) {
+    public void setTarifaBsas(Double tarifaBsas) {
         this.tarifaBsas = tarifaBsas;
     }
 
-    public String getTarifaResto() {
+    public Double getTarifaResto() {
         return tarifaResto;
     }
 
-    public void setTarifaResto(String tarifaResto) {
+    public void setTarifaResto(Double tarifaResto) {
         this.tarifaResto = tarifaResto;
     }
     public Integer getEstado() {

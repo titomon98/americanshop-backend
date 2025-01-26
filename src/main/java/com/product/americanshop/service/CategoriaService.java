@@ -30,6 +30,12 @@ public class CategoriaService {
             existing.setPorcentajeFob(categoria.getPorcentajeFob());
             existing.setNombre(categoria.getNombre());
             existing.setEstado(categoria.getEstado());
+            existing.setIva(categoria.getIva());
+            existing.setDerecho(categoria.getDerecho());
+            existing.setEstadistica(categoria.getEstadistica());
+            existing.setInterno(categoria.getInterno());
+            existing.setSeguro(categoria.getSeguro());
+            existing.setTjt(categoria.getTjt());
             return categoriaRepository.save(existing);
         });
     }
